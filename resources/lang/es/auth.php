@@ -26,5 +26,6 @@ return [
     'Confirm Password' => 'Confirmar Contraseña',
     'click here to request another' => 'haga clic aquí para solicitar otro',
     'Comments' => 'Comenta',
-    'Send' => 'Enviar'
+    'Send' => 'Enviar',
+    'Count' => 'Cuenta'
 ];

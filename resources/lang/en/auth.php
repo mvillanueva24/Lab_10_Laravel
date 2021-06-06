@@ -27,5 +27,8 @@ return [
     'Confirm Password' => 'Confirm Password',
     'click here to request another' => 'click here to request another',
     'Comments' => 'Comments',
-    'Send' => 'Send'
+    'Send' => 'Send',
+    'Count' => 'Count',
+    'Edit' => 'Edit',
+    'Delete' => 'Delete'
 ];

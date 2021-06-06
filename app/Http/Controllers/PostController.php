@@ -57,7 +57,15 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-    /*
+    public function destroy($id)
+    {
+        $dpost = Post::find($id);
+        $dpost->delete();
+        //Post::where('_id','=', $id)->delete();
+        return redirect()->route('myPosts');
+    }
+
+    
     protected $create = ['created_at'];
     public function today()
     {
@@ -66,5 +74,5 @@ class PostController extends Controller
             today()
         )->get();
         return view('today', compact('posts'));
-    }*/
+    }
 }

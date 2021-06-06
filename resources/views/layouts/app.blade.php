@@ -64,6 +64,10 @@
                                         {{ __('auth.Logout') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ url('/user/count') }}">
+                                        {{ __('auth.Count') }}
+                                    </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
