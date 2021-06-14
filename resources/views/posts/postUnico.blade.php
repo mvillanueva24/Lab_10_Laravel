@@ -6,7 +6,10 @@
     <div class="row justify-content-md-center">
         <div class="col-md-8">
             <div class="class">
-                <img src="{{ asset($post->image) }}" alt="..." class="card-img-top">
+                <img src="{{asset('/storage/'.$post->image) }}" alt="..." class="card-img-top">
+                <!--asset('/storage/'.$post->image)-->
+                <!--src=" asset($post->image)   Sin almacenamiento en discos-->
+                <!--src=" Storage::url($post->image)-->
                 <div class="card-body">
                     <h5 class="card-title">
                         {{ $post->title }}
