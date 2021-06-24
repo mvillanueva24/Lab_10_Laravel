@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11b6dba20d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
@@ -52,6 +53,23 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" data-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                    @if (count(auth()->user()->unreadNotifications))
+                                        <span class="badge badge-warning">{{ count(auth()->user()->unreadNotifications) }}</span>
+                                    @endif
+                            </a>   
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                @foreach (auth()->user()->unreadNotifications as $notification)
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-envelope mr-2"></i> Alguien hizo un comentario en tu post: {{ $notification->data['title'] }}
+                                        <span class="ml-3 pull-right text-muted text-sm">{{ $notification->created_at->diffForHumans() }}</span>
+                                @endforeach
+                                
+                            </div>
+                            
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

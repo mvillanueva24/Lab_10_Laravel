@@ -30,6 +30,6 @@
         </div>  
     </div>
     @endforeach
-    {{ $posts->links() }}
+    {{ $posts->links() }} <!--No se porque no funciona en MyPosts, pero sí funciona en la pantalla inicial-->
 </div>
 @endsection
